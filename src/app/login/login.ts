@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,7 +24,9 @@ const MODULES: any[] = [
 
 export class Login {
   private authService = inject(AuthGoogleService);
+  private router = inject(Router);
   signInWithGoogle() {
     this.authService.login();
+    //this.router.navigate(['/dashboard']);
   }
 }
